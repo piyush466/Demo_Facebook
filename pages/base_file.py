@@ -21,3 +21,6 @@ class Basepage:
 
     def take_screenshot(self, image_name):
         self.driver.save_screenshot(f"../screenshot/{image_name}.png")
+
+    def is_display(self, by_locator):
+        WebDriverWait(self.driver,10).until(EC.visibility_of_element_located(by_locator)).is_displayed()
